@@ -1,0 +1,27 @@
+{
+  "name": "triage-pulse",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npx turbo run dev --filter=web",
+    "dev:mobile": "npx turbo run dev --filter=mobile",
+    "dev:api": "npx turbo run dev --filter=api",
+    "typecheck": "npx turbo run typecheck",
+    "lint": "npx turbo run lint",
+    "format": "npx prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "prepare": "npx husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npx prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "turbo": "^2.11.11"
+  }
+}
